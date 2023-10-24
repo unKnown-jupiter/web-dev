@@ -1,0 +1,50 @@
+.header, .nav, .main, .sidebar, .advertise, .footer {
+    background: bisque;
+    border: 5px solid salmon;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 8px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.header, .footer{
+    grid-column : span 4;
+}
+.main{
+    grid-column: span 2;
+}
+.nav, .main{
+    grid-row: span 2;
+}
+@media screen and (max-width: 600px) {
+    .container{
+        display: block;    
+    }
+   aside{
+    display: flex;
+    flex-direction: column-reverse;
+   }
+}
+@media screen and (min-width:576px) and (max-width:768px) {
+    .nav{
+        grid-column: span 4;
+    }
+    .nav>ul>li{
+        display: inline;
+        margin-right: 5em;
+    }
+    .nav>ul{
+        text-align: center;
+    }
+    .main, .footer{
+        grid-column-start: 2;
+        grid-column-end: -1;
+    }
+    .sidebar{
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+}

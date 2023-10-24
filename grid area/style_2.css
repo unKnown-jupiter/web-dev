@@ -1,0 +1,59 @@
+.header, .nav, .main, .sidebar, .advertise, .footer {
+    background: bisque;
+    border: 5px solid salmon;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+.header{grid-area: h;}
+.nav{grid-area: n;}
+.main{grid-area: m;}
+.sidebar{grid-area: s;}
+.advertise{grid-area: a;}
+.footer{grid-area: f;}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "h  h   h   h   h"
+    "n  m   m   m   s"
+    "n  m   m   m   a"
+    "f  f   f   f   f"
+    ;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 600px) {
+    .container{
+        grid-template-areas: 
+        "h"
+        "n"
+        "m"
+        "a"
+        "s"
+        "f"
+    }
+}
+/* Medium Device */
+@media screen and (min-width:576px) and (max-width:768px) {
+    .container{
+        grid-template-areas: 
+        "h  h   h   h"
+        "n  n   n   n"
+        "s  m   m   m"
+        "a  f   f   f"
+        ;
+    }
+    
+
+
+
+
+
+
+
+
+}
